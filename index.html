@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>AURA</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="config.js"></script>
+    <script>
+        document.title = SITE_CONFIG.brandName;
+    </script>
+</head>
+<body class="loading">
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="bg-mesh"></div>
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+        <span class="orb orb-5"></span>
+    </div>
+
+    <div class="intro-screen" id="introScreen" aria-live="polite">
+        <div class="intro-glow"></div>
+        <h1 class="aura-wordmark intro-wordmark" id="brandNameIntro"></h1>
+        <div class="intro-nfc" data-nfc-icon></div>
+        <p class="intro-tagline" id="introTagline"></p>
+    </div>
+
+    <main class="container">
+        <header class="hero">
+            <div class="brand-stack">
+                <h2 class="aura-wordmark" id="brandNameHero"></h2>
+                <div class="hero-nfc" data-nfc-icon tabindex="0"></div>
+            </div>
+            <p class="hero-sub" id="heroSub"></p>
+        </header>
+
+        <nav class="links" id="machinesContainer" aria-label="Gym machines"></nav>
+    </main>
+
+    <!-- Timetable Modal -->
+    <div class="modal" id="timetableModal" role="dialog" aria-labelledby="timetableTitle" aria-hidden="true">
+        <div class="modal-backdrop" data-close="timetableModal"></div>
+        <div class="modal-panel">
+            <button class="modal-close" data-close="timetableModal" aria-label="Close">&times;</button>
+
+            <div class="modal-view" id="timetableView">
+                <h2 id="timetableTitle">My Timetable</h2>
+                <p class="modal-date" id="todayDate"></p>
+                <p class="modal-day" id="todayDay"></p>
+
+                <div class="timetable-list" id="todayCourses"></div>
+
+                <button class="btn-secondary" id="editTimetableBtn">
+                    <i class="fas fa-pen"></i> Edit Timetable
+                </button>
+            </div>
+
+            <div class="modal-view hidden" id="timetableEdit">
+                <h2>Edit Timetable</h2>
+                <div class="day-tabs" id="dayTabs"></div>
+
+                <div class="edit-courses" id="editCourses"></div>
+
+                <button class="btn-add" id="addCourseBtn">
+                    <i class="fas fa-plus"></i> Add Course
+                </button>
+
+                <div class="edit-actions">
+                    <button class="btn-primary" id="saveTimetableBtn">Save</button>
+                    <button class="btn-ghost" id="cancelEditBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="nfc-icon.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

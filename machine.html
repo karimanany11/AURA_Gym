@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>AURA</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="config.js"></script>
+</head>
+<body class="loading machine-page">
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="bg-mesh"></div>
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+        <span class="orb orb-5"></span>
+    </div>
+
+    <div class="intro-screen" id="introScreen" aria-live="polite">
+        <div class="intro-glow"></div>
+        <h1 class="aura-wordmark intro-wordmark" id="brandNameIntro"></h1>
+        <div class="intro-nfc" data-nfc-icon></div>
+        <p class="intro-tagline" id="introTagline"></p>
+    </div>
+
+    <main class="container machine-container">
+        <header class="hero machine-hero">
+            <div class="brand-stack">
+                <h2 class="aura-wordmark" id="brandNameHero"></h2>
+                <div class="hero-nfc" data-nfc-icon tabindex="0"></div>
+            </div>
+        </header>
+
+        <section class="machine-content" id="machineContent" aria-live="polite"></section>
+    </main>
+
+    <script src="nfc-icon.js"></script>
+    <script src="machine.js"></script>
+</body>
+</html>

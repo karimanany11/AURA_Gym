@@ -1,0 +1,126 @@
+.nfc-icon {
+    display: inline-block;
+    vertical-align: middle;
+    color: currentColor;
+    overflow: visible;
+    transition: filter 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nfc-icon .nfc-arc-left {
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nfc-icon .nfc-dot-wrap {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nfc-dot-pulse 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.nfc-icon .nfc-dot {
+    fill: currentColor;
+}
+
+.nfc-icon .nfc-wave {
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.35;
+    stroke-dasharray: 1 1;
+    stroke-dashoffset: 1;
+    animation: nfc-wave-out 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.nfc-icon .nfc-wave-1 {
+    animation-delay: 0s;
+}
+
+.nfc-icon .nfc-wave-2 {
+    animation-delay: 0.4s;
+}
+
+@keyframes nfc-dot-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes nfc-wave-out {
+    0% {
+        stroke-dashoffset: 1;
+        opacity: 0.15;
+    }
+    35% {
+        stroke-dashoffset: 0;
+        opacity: 0.9;
+    }
+    65% {
+        stroke-dashoffset: 0;
+        opacity: 0.5;
+    }
+    100% {
+        stroke-dashoffset: -0.2;
+        opacity: 0.15;
+    }
+}
+
+.nfc-icon:hover,
+.nfc-icon:focus-visible {
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5))
+            drop-shadow(0 0 20px rgba(34, 211, 238, 0.15));
+    outline: none;
+}
+
+.nfc-icon:hover .nfc-dot-wrap,
+.nfc-icon:focus-visible .nfc-dot-wrap {
+    animation: nfc-dot-hover 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.nfc-icon:hover .nfc-wave-1,
+.nfc-icon:focus-visible .nfc-wave-1 {
+    animation: nfc-wave-hover 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    animation-delay: 0s;
+}
+
+.nfc-icon:hover .nfc-wave-2,
+.nfc-icon:focus-visible .nfc-wave-2 {
+    animation: nfc-wave-hover 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes nfc-dot-hover {
+    0%, 100% { transform: scale(1.08); opacity: 1; }
+    50% { transform: scale(1.22); opacity: 1; }
+}
+
+@keyframes nfc-wave-hover {
+    0% {
+        stroke-dashoffset: 1;
+        opacity: 0.2;
+    }
+    50% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -0.15;
+        opacity: 0.25;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nfc-icon .nfc-dot-wrap,
+    .nfc-icon .nfc-wave {
+        animation: none;
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
